@@ -6,24 +6,30 @@ import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 
 function App() {
+  // Dark mode state
   const [darkMode, setDarkMode] = useState(() => {
     return JSON.parse(localStorage.getItem("darkMode")) || false;
   });
 
+  // Tasks state list
   const [tasks, setTasks] = useState(() => {
     return JSON.parse(localStorage.getItem("tasks")) || [];
   });
 
+  // Input state
   const [input, setInput] = useState("");
 
+  // Save state to localStorage
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
+  // Save tasks to localStorage
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  // add task
   const addTask = () => {
     if (input.trim() === "") return;
 
@@ -37,10 +43,12 @@ function App() {
     setInput("");
   };
 
+  // delete task
   const deleteTask = (id) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
+  // toggle task
   const toggleTask = (id) => {
     setTasks(
       tasks.map(task =>

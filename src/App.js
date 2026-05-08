@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-import Header from "./components/Header";
-import TaskForm from "./components/TaskForm";
-import TaskList from "./components/TaskList";
+import Header from "./Components/Header";
+import TaskForm from "./Components/TaskForm";
+import TaskList from "./Components/TaskList";
 
 function App() {
   // Dark mode state

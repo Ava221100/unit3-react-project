@@ -1,3 +1,4 @@
+//when runing terminal it shows view on http://localhost:3001
 import { useState, useEffect } from "react";
 import "./App.css";
 
